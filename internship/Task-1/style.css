@@ -1,0 +1,93 @@
+/* ---------- GLOBAL ---------- */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  background: #eef4f6;
+  color: #2c3e50;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: white;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.navbar ul{
+  display: flex;
+  gap: 25px;
+}
+.navbar a{
+  text-decoration: none;
+  font-weight: 600;
+  color: #00796b;
+}
+.logo{
+  color: #00796b;
+  font-weight: 700;
+}
+
+/* ---------- HERO ---------- */
+.hero-section{
+  height: 70vh;
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085") center/cover;
+  position: relative;
+}
+.overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+.hero-content{
+  position: relative;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hero-content h1{
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+.hero-content button{
+  margin-top: 15px;
+  padding: 12px 28px;
+  border: none;
+  background: #ff9800;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.hero-content button:hover{
+  transform: scale(1.08);
+  background: #e88c00;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.container{
+  width: 85%;
+  margin: 45px auto;
+}
+.card{
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.14);
+  margin-bottom: 25px;
+}
+.card img{
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.btn-link{
+  display: inline
+}
