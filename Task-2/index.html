@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermediate HTML, CSS, and JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+
+   
+</head>
+<body>
+    
+    <nav>
+        <h1>My Project</h1>
+        <ul>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#todo">To-Do List</a></li>
+        </ul>
+    </nav>
+
+    
+    <main>
+        
+        <section id="contact" class="section">
+            <h2>Contact Form</h2>
+            <form id="contact-form">
+                <label for="name">Name (Required):</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email (Required):</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message (Required):</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- To-Do List Section -->
+        <section id="todo" class="section">
+            <h2>Dynamic To-Do List</h2>
+            <input type="text" id="todo-input" placeholder="Add a new task...">
+            <button id="add-todo">Add Task</button>
+            <ul id="todo-list"></ul>
+        </section>
+    </main>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
