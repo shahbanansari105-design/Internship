@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FunHub Dashboard — Enhanced Interactive Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <nav>
+        <h2><i class="fas fa-cube"></i> FunHub</h2>
+        <ul id="navList">
+            <li class="active" data-target="dashboard" onclick="showSection('dashboard', this)"><i class="fas fa-home"></i> Dashboard</li>
+            <li data-target="quiz" onclick="showSection('quiz', this)"><i class="fas fa-question-circle"></i> Quiz</li>
+            <li data-target="joke" onclick="showSection('joke', this)"><i class="fas fa-grin-squint"></i> Joke</li>
+            <li data-target="carousel" onclick="showSection('carousel', this)"><i class="fas fa-images"></i> Carousel</li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="dashboard" class="section">
+            <div class="card">
+                <div class="grid">
+                    <div>
+                        <h3>Welcome to FunHub — Interactive Learning & Fun</h3>
+                        <p class="meta">Discover engaging modules designed for learning, entertainment, and creativity.</p>
+                        <ul style="color: var(--muted); padding-left: 25px;">
+                            <li><strong>Quiz Module:</strong> Topic-based quizzes (Python, Java, JS) with **instant feedback** and **detailed explanations**.</li>
+                            <li><strong>Joke Module:</strong> Fetch hilarious jokes from a third-party API for quick breaks.</li>
+                            <li><strong>Image Carousel:</strong> Smooth, auto-playing image gallery with full navigation control.</li>
+                        </ul>
+                        <div class="dashboard-stats">
+                            <div class="stat-card">
+                                <div><i class="fas fa-chart-line"></i></div>
+                                <div>Quizzes Taken</div>
+                                <div id="quizCount">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <div><i class="fas fa-laugh"></i></div>
+                                <div>Jokes Fetched</div>
+                                <div id="jokeCount">0</div>
+                            </div>
+                            <div class="stat-card">
+                                <div><i class="fas fa-image"></i></div>
+                                <div>Images Viewed</div>
+                                <div id="imageCount">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <aside>
+                        <h4><i class="fas fa-lightbulb"></i> Quickstart Guide</h4>
+                        <ol style="margin: 16px 0 0 0; padding-left: 20px; color: var(--muted);">
+                            <li>Navigate to the **Quiz** tab and select your preferred language.</li>
+                            <li>Answer all 5 questions and view your final score.</li>
+                            <li>Visit the **Joke** tab to instantly fetch a new joke.</li>
+                            <li>Use the **Carousel** for a relaxing visual break.</li>
+                        </ol>
+                        <div style="margin-top: 20px; padding: 10px; border-left: 3px solid var(--success);">
+                            <small class="meta">Tip: Use the **Theme Toggle** (bottom right) to switch to Light Mode!</small>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="section">
+            <div class="card">
+                <h3><i class="fas fa-brain"></i> Interactive Topic Quiz</h3>
+                <p class="meta">Choose a topic. Each quiz contains 5 timed questions with detailed explanations.</p>
+
+                <div class="topic-row" id="topicRow">
+                    <button class="topic-btn" data-topic="python" onclick="selectTopic('python', this)">Python</button>
+                    <button class="topic-btn" data-topic="java" onclick="selectTopic('java', this)">Java</button>
+                    <button class="topic-btn" data-topic="javascript" onclick="selectTopic('javascript', this)">JavaScript</button>
+                </div>
+
+                <div id="quizArea">
+                    <p class="meta">Select a topic above to begin. Good luck!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="joke" class="section">
+            <div class="card">
+                <h3><i class="fas fa-face-laugh-squint"></i> Joke Generator</h3>
+                <p class="meta">Fetch a fresh, programming-related joke from the Joke API for a quick laugh break.</p>
+                <button class="btn" onclick="getJoke()"><i class="fas fa-sync-alt"></i> Get a New Joke</button>
+                <p id="jokeOut">Click the button to load a joke...</p>
+            </div>
+        </section>
+
+        <section id="carousel" class="section">
+            <div class="card">
+                <h3><i class="fas fa-camera"></i> Image Gallery Carousel</h3>
+                <div style="margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 16px;">
+                    <div class="carousel-container">
+                        <img id="slide" src="" alt="Nature Image" loading="lazy">
+                    </div>
+                    <div class="indicators" id="indicators"></div>
+                    <div class="carousel-controls">
+                        <button class="btn ghost" onclick="prevSlide()"><i class="fas fa-chevron-left"></i> Previous</button>
+                        <button class="btn" onclick="toggleAutoPlay()" id="autoPlayBtn"><i class="fas fa-play"></i> Start Auto-Play</button>
+                        <button class="btn ghost" onclick="nextSlide()">Next <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </div>
+
+      <script src="script.js"></script>
+</body>
+</html>
